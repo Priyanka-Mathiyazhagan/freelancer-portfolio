@@ -1,0 +1,97 @@
+<section class="contact-section">
+    <div class="contact">
+        <h1>Contact Me</h1>
+
+        <p class="contact-description">
+            I'm available for freelance work and full-time opportunities.
+            Feel free to reach out.
+        </p>
+
+        <div class="contact-container">
+
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+
+                <input type="text" placeholder="Your Name" formControlName="name">
+
+                <small *ngIf="
+          name.invalid &&
+          name.touched">
+                    Name must be at least 3 characters.
+                </small>
+
+                <!-- Email -->
+                <input type="email" placeholder="Your Email" formControlName="email">
+
+                <small *ngIf="
+          email.invalid &&
+          email.touched">
+                    Enter a valid email address.
+                </small>
+
+                <!-- Subject -->
+                <input type="text" placeholder="Subject" formControlName="subject">
+
+                <small *ngIf="
+          subject.invalid &&
+          subject.touched">
+                    Subject must be at least 5 characters.
+                </small>
+
+                <!-- Message -->
+                <textarea rows="5" placeholder="Your Message" formControlName="message">
+      </textarea>
+
+                <small *ngIf="
+          message.invalid &&
+          message.touched">
+                    Message must be at least 10 characters.
+                </small>
+
+                <!-- Button -->
+                <button type="submit" [disabled]="contactForm.invalid || isSubmitting">
+
+                    {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+
+                </button>
+
+                <!-- Success Message -->
+                <div class="success" *ngIf="successMessage">
+                    {{ successMessage }}
+                </div>
+
+                <div class="error" *ngIf="errorMessage">
+                    {{ errorMessage }}
+                </div>
+            </form>
+
+            <div class="contact-info">
+                <h3>Contact Info</h3>
+
+                <p>📧 carriersof1256@gmail.com</p>
+                <p>📱 +91 74184 48281</p>
+                <p>📍 Thanjavur, India</p>
+
+                <h3>Social</h3>
+
+                <div class="social-links">
+                    <a href="https://github.com/priyanka-mathiyazhagan" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/priyanka-mathiyazhagan" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+
+                    <a href="https://www.upwork.com/freelancers/~your-id" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-upwork"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <a routerLink="/" class="back-btn">
+            ← Back to Home
+        </a>
+    </div>
+</section>

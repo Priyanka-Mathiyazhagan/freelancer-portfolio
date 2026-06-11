@@ -1,0 +1,238 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.page {
+  height: 98vh;
+  display: grid;
+  grid-template-rows: 230px 1fr 180px;
+}
+
+.top,
+.middle,
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.top {
+  background: #182c56;
+  color: white;
+  justify-content: center;
+  gap: 2px;
+}
+
+.middle {
+  background: #f8fafc;
+  overflow-x: hidden;
+  /* width: 100%; */
+}
+
+.top p {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.middle h1 {
+  margin: 15px 0 0 0;
+  font-size: 24px;
+}
+
+.bottom {
+  background: #182c56;
+  color: white;
+  justify-content: center;
+}
+
+.cv-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+
+  .page {
+    grid-template-rows: auto auto auto;
+    height: auto;
+  }
+
+  .top,
+  .middle,
+  .bottom {
+    padding: 15px;
+  }
+
+  .cv-buttons {
+    flex-direction: column;
+  }
+
+}
+
+/* for tablets */
+@media (max-width: 992px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* for mobile */
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+/* Preview button */
+.preview {
+  background: rgb(255, 255, 255);
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  font-size: 16px;
+}
+
+.preview:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* Download button */
+.download {
+  background: #22c55e;
+  color: white;
+  border: 2px solid #22c55e;
+}
+
+.download:hover {
+  background: #16a34a;
+}
+
+.hireMebtn {
+  background: #E3B23C;
+  color: black;
+  border: 2px solid #E3B23C;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hireMebtn:hover {
+  background: #B8860B;
+}
+
+.dark-theme {
+  background: #111827;
+  color: white;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 900px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.projects {
+  text-align: center;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: 15px auto 0;
+  box-sizing: border-box;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.project-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px solid #717f9e;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  background: #1e293b;
+  color: white;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  /* allows tags to move to next line */
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+  border: 1px solid #363a44;
+  border-radius: 5px;
+
+  background: #eff6ff;
+  color: #2d323b;
+
+  font-size: 0.75rem;
+  font-weight: bold;
+
+  white-space: nowrap;
+  /* keeps Angular, SQL Server together */
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.tech-tag-label {
+  margin-top: 6px;
+}
+
+.bottom h1 {
+  margin-bottom: 2px;
+}
+
+.contact {
+  margin-top: 8px;
+  color: #ebedf0;
+}
