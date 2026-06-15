@@ -1,13 +1,18 @@
 html,
 body {
-  height: 100%;
   margin: 0;
 }
 
-.page {
+/* .page {
   height: 98vh;
   display: grid;
   grid-template-rows: 230px 1fr 180px;
+} */
+
+.page {
+  min-height: 98vh;
+  display: grid;
+  grid-template-rows: auto auto auto;
 }
 
 .top,
